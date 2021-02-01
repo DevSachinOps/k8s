@@ -10,6 +10,11 @@ OR
 
 * `kubectl apply -f replicaset.yml`
 
+#### Get Replicaset
+* `kubectl get replicaset`
+
+#### Delete Replicaset
+* `kubectl delete replicaset replicaset-name`
 
 #### Scale Replicaset
 * Update the `.yml` file with `replicas: 6` and run the command `kubectl replace -f replicaset.yml`
