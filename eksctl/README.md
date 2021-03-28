@@ -42,6 +42,21 @@ For example taking `nginx-deployment.yml` and using nodeAffinity for the same.
 `kubectl scale --replicas=5 deployment test-autoscaler` Initially some pods will be coming as pending, then ASG will get scaled and launch new instances and pods will get scheduled on the newly launched nodes.
 
 
+#### Enable logging
+
+```
+cloudWatch:
+  clusterLogging:
+    enableTypes: ["api", "audit", "authenticator"]
+```
+add this section in cluster.yml and then can run the commmand
+
+`eksctl update-cluster-logging --config-file cluster.yml --approve`
+
+Disable Logging
+
+`eksctl update-cluster-logging --name=CLUSTER-NAME --disable-type all`
+
 
 
 
